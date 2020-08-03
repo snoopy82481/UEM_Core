@@ -1,0 +1,7 @@
+TOPIC
+    about_uem_core
+
+SHORT DESCRIPTION
+    Generic Framework for using Blackberry UEM RestAPI connections
+
+LONG DESCRIPTION
