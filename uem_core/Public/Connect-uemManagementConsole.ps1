@@ -1,14 +1,18 @@
 function Connect-uemManagementConsole {
 	[CmdletBinding()]
 	Param(
-		[Parameter(Mandatory)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
 		[ValidateNotNullOrEmpty()]
 		[ValidateScript({
 			$uri = $_ -as [System.Uri]
 			$uri.Scheme -match '[http|https]'
 		})]
 		[System.Uri]
-		$tenant
+		$tenant,
+
+		[Parameter()]
+		[switch]
+		$localAdmin
 	)
 
 	$global:UEMHostPortTenantGUIDBaseURL = $tenant
@@ -17,17 +21,31 @@ function Connect-uemManagementConsole {
 		Throw 'Unable to reach server';
 	}
 
-	$restCall = @{
-		Uri = "$UEMHostPortTenantGUIDBaseURL/util/authorization"
-		Method = "POST"
-		body = @{
-			provider = "AD"
-			username = $Credential.GetNetworkCredential().UserName
-			password = (Set-base64Password $($Credential.GetNetworkCredential().Password))
-			domain = $Credential.GetNetworkCredential().domain
-		} | ConvertTo-Json
-		ContentType = "application/vnd.blackberry.authorizationrequest-v1+json"
+	if ($localAdmin.isPresent) {
+		$restCall = @{
+			Uri = "$UEMHostPortTenantGUIDBaseURL/util/authorization"
+			Method = "POST"
+			body = @{
+				provider = "LOCAL"
+				username = $Credential.GetNetworkCredential().UserName
+				password = (Set-base64Password $($Credential.GetNetworkCredential().Password))
+			} | ConvertTo-Json
+			ContentType = "application/vnd.blackberry.authorizationrequest-v1+json"
+		}
+	} else {
+		$restCall = @{
+			Uri = "$UEMHostPortTenantGUIDBaseURL/util/authorization"
+			Method = "POST"
+			body = @{
+				provider = "AD"
+				username = $Credential.GetNetworkCredential().UserName
+				password = (Set-base64Password $($Credential.GetNetworkCredential().Password))
+				domain = $Credential.GetNetworkCredential().domain
+			} | ConvertTo-Json
+			ContentType = "application/vnd.blackberry.authorizationrequest-v1+json"
+		}
 	}
+
 
     try
     {
