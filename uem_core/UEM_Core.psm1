@@ -1,3 +1,5 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 $global:validGroups = [System.Collections.Generic.List[System.Object]]::new()
 $global:ErrorReport = [System.Collections.Generic.List[System.Object]]::new()
 $global:UEMHostPortTenantGUIDBaseURL = $null
