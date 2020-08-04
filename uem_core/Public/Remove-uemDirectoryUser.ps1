@@ -1,7 +1,7 @@
 function Remove-uemDirectoryUser {
 	[CmdletBinding()]
 	Param (
-		[Parameter(Mandatory)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
 		[ValidateNotNullOrEmpty()]
 		[System.Guid]
 		$userGuid

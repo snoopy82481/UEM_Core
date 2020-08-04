@@ -1,7 +1,8 @@
 function Remove-uemActivationPassword {
 	[CmdletBinding()]
 	param (
-		[Parameter(Mandatory,Position=0)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
+		[ValidateNotNullOrEmpty()]
 		[System.Net.Mail.MailAddress]
 		$userEmailAddress
 	)

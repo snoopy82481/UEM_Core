@@ -1,11 +1,13 @@
 function Remove-uemUserFromGroup {
 	[CmdletBinding()]
 	param (
-		[Parameter(Mandatory, Position=0)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
+		[ValidateNotNullOrEmpty()]
 		[System.Guid]
 		$userGUID,
 
-		[Parameter(Mandatory, Position=1)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=1)]
+		[ValidateNotNullOrEmpty()]
 		[System.String]
 		$groupName
 	)

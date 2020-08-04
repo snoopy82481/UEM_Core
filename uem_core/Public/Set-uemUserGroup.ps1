@@ -1,11 +1,11 @@
 function Set-uemUserGroup {
 	[CmdletBinding()]
 	param (
-		[Parameter(Mandatory, Position=0)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
 		[System.Guid]
 		$userGUID,
 
-		[Parameter(Mandatory, Position=1)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=1)]
 		[System.String]
 		$groupName
 	)

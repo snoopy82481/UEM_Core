@@ -1,17 +1,21 @@
 function Set-uemActivationPassword {
 	[CmdletBinding()]
 	param (
-		[Parameter(Mandatory,Position=0)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
+		[ValidateNotNullOrEmpty()]
 		[System.Net.Mail.MailAddress]
 		$userEmailAddress,
 
-		[Parameter(Position=1)]
-		[switch]
+		[Parameter(ValueFromPipeline,Position=1)]
+		[System.String]
+		$activationProfile,
+
+		[Parameter(ValueFromPipeline,Position=2)]
+		[System.String]
 		$Type
 	)
 
 	begin {
-		$activationExperationDate = [datetime]::Now.AddDays(20).ToString("o")
 		$userGuid = (Get-uemUser $userEmailAddress).guid
 
 		switch ($type) {
@@ -28,8 +32,8 @@ function Set-uemActivationPassword {
 									"emailTemplate" = @{
 										"name" = "Default activation email"
 									}
-									"expiry" = $activationExperationDate
-									"expireAfterUse" = $null;
+									"expiry" = $null
+									"expireAfterUse" = $null
 									"activationProfile" = @{
 										"name" = "Default"
 									}
@@ -53,10 +57,10 @@ function Set-uemActivationPassword {
 									"emailTemplate" = @{
 										"name" = "Default activation email"
 									}
-									"expiry" = $activationExperationDate
-									"expireAfterUse" = $null;
+									"expiry" = $null
+									"expireAfterUse" = $null
 									"activationProfile" = @{
-										"name" = "NMCI Activation Profile"
+										"name" = $activationProfile
 									}
 								}
 							)

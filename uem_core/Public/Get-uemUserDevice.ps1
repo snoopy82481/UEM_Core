@@ -1,7 +1,8 @@
 function Get-uemUserDevice {
 	[CmdletBinding()]
 	Param (
-		[Parameter(Mandatory,Position=0)]
+		[Parameter(Mandatory,ValueFromPipeline,Position=0)]
+		[ValidateNotNullOrEmpty()]
 		[System.Guid]
 		$userGUID
 	)
