@@ -8,28 +8,45 @@ schema: 2.0.0
 # Connect-uemManagementConsole
 
 ## SYNOPSIS
-Creates connection string to BlackBerry UEM console.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Connect-uemManagementConsole [-tenant] <Uri> [<CommonParameters>]
+Connect-uemManagementConsole [-tenant] <Uri> [-localAdmin] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Connect-uemManagementConsole** cmdlet creates a connection string to the BlackBerry UEM console. This needs to be ran before any further command can be ran against the server.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Connect-uemManagementConsole -tenant "https://server.name:18084/tenantguid"
+PS C:\> {{ Add example code here }}
 ```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
+### -localAdmin
+{{ Fill localAdmin Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -tenant
-This is the server and tenant guid required to connect to your BlackBerry UEM instance.
+{{ Fill tenant Description }}
 
 ```yaml
 Type: Uri
@@ -39,7 +56,7 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -48,7 +65,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Uri
 
 ## OUTPUTS
 

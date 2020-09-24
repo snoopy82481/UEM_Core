@@ -13,7 +13,8 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Set-uemActivationPassword [-userEmailAddress] <MailAddress> [-Type] [<CommonParameters>]
+Set-uemActivationPassword [-userEmailAddress] <MailAddress> [[-activationProfile] <String>] [[-Type] <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,14 +35,29 @@ PS C:\> {{ Add example code here }}
 {{ Fill Type Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -activationProfile
+{{ Fill activationProfile Description }}
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -56,7 +72,7 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -65,7 +81,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Net.Mail.MailAddress
+
+### System.String
 
 ## OUTPUTS
 
