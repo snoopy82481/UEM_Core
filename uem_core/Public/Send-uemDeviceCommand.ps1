@@ -46,13 +46,13 @@ function Send-uemDeviceCommand {
 					}
 				) | ConvertTo-Json
 			}
-			DISABLE_LOST_MODE {
+	<# 		DISABLE_LOST_MODE {
 				$restCall.Body = @(
 					@{
 						"type" = "DISABLE_LOST_MODE"
 					}
 				) | ConvertTo-Json
-			}
+			} #>
 			DISABLE_WORK_SPACE {
 				$restCall.Body = @(
 					@{
@@ -60,7 +60,7 @@ function Send-uemDeviceCommand {
 					}
 				) | ConvertTo-Json
 			}
-			ENABLE_LOST_MODE {
+			<# ENABLE_LOST_MODE {
 				if ($propertiesInput.footnote) {
 					$restCall.Body = @(
 						@{
@@ -83,7 +83,7 @@ function Send-uemDeviceCommand {
 						}
 					) | ConvertTo-Json
 				}
-			}
+			} #>
 			ENABLE_WORK_SPACE {
 				$restCall.Body = @(
 					@{
