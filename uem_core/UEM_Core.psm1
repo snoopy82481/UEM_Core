@@ -6,7 +6,17 @@ $global:UEMHostPortTenantGUIDBaseURL = $null
 $global:AuthorizationString = $null
 
 foreach ($directory in @('Public','Private','Classes')) {
-	Get-ChildItem -Path "$PSScriptRoot\$directory\*.ps1" | ForEach-Object {. $PSItem.FullName}
+	$folderPath = Join-Path -Path $PSScriptRoot -ChildPath $directory
+
+	if (Test-Path $folderPath) {
+		Write-Verbose -Message "Importing from $directory"
+		$Functions = Get-ChildItem -Path $folderPath -Filter '*.ps1'
+
+		foreach ($function in $Functions) {
+			Write-Verbose -Message "  Importing $($function.BaseName)"
+			. $($function.FullName)
+		}
+	}
 }
 
 $global:credential = $host.ui.PromptForCredential("UEM Server Login","Please enter your username and password",$userInfo,"NetBiosUserName")
