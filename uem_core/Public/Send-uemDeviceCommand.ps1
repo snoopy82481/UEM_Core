@@ -32,20 +32,20 @@ function Send-uemDeviceCommand {
 
 	process {
 		switch ($deviceCommand) {
-			DELETE_DEVICE_DATA {
+			<# DELETE_DEVICE_DATA {
 				$restCall.Body = @(
 					@{
 						"type" = "DELETE_DEVICE_DATA"
 					}
 				) | ConvertTo-Json
-			}
-			DELETE_WORK_SPACE_DATA {
+			} #>
+			<# DELETE_WORK_SPACE_DATA {
 				$restCall.Body = @(
 					@{
 						"type" = "DELETE_WORK_SPACE_DATA"
 					}
 				) | ConvertTo-Json
-			}
+			} #>
 	<# 		DISABLE_LOST_MODE {
 				$restCall.Body = @(
 					@{
@@ -53,13 +53,13 @@ function Send-uemDeviceCommand {
 					}
 				) | ConvertTo-Json
 			} #>
-			DISABLE_WORK_SPACE {
+			<# DISABLE_WORK_SPACE {
 				$restCall.Body = @(
 					@{
-						"type" = "DISABLE_LOST_MODE"
+						"type" = "DISABLE_WORK_SPACE"
 					}
 				) | ConvertTo-Json
-			}
+			} #>
 			<# ENABLE_LOST_MODE {
 				if ($propertiesInput.footnote) {
 					$restCall.Body = @(
@@ -84,21 +84,21 @@ function Send-uemDeviceCommand {
 					) | ConvertTo-Json
 				}
 			} #>
-			ENABLE_WORK_SPACE {
+			<# ENABLE_WORK_SPACE {
 				$restCall.Body = @(
 					@{
 						"type" = "ENABLE_WORK_SPACE"
 					}
 				) | ConvertTo-Json
-			}
-			GET_DEVICE_LOGS {
+			} #>
+			<# GET_DEVICE_LOGS {
 				$restCall.Body = @(
 					@{
-						"type" = "ENABLE_WORK_SPACE"
+						"type" = "GET_DEVICE_LOGS"
 					}
 				) | ConvertTo-Json
-			}
-			LOCK_DEVICE {
+			} #>
+			<# LOCK_DEVICE {
 				$restCall.Body = @(
 					@{
 						"type" = "LOCK_DEVICE"
@@ -108,8 +108,8 @@ function Send-uemDeviceCommand {
 						}
 					}
 				) | ConvertTo-Json
-			}
-			LOCK_WORK_SPACE {
+			} #>
+			<# LOCK_WORK_SPACE {
 				$restCall.Body = @(
 					@{
 						"type" = "LOCK_DEVICE"
@@ -118,36 +118,36 @@ function Send-uemDeviceCommand {
 						}
 					}
 				) | ConvertTo-Json
-			}
-			REMOVE_DEVICE {
+			} #>
+			<# REMOVE_DEVICE {
 				$restCall.Body = @(
 					@{
 						"type" = "REMOVE_DEVICE"
 					}
 				) | ConvertTo-Json
-			}
-			REQUEST_DEVICE_INFO {
+			} #>
+			<# REQUEST_DEVICE_INFO {
 				$restCall.Body = @(
 					@{
 						"type" = "REQUEST_DEVICE_INFO"
 					}
 				) | ConvertTo-Json
-			}
-			RESET_WORK_SPACE_PASSWORD {
+			} #>
+			<# RESET_WORK_SPACE_PASSWORD {
 				$restCall.Body = @(
 					@{
 						"type" = "RESET_WORK_SPACE_PASSWORD"
 					}
 				) | ConvertTo-Json
-			}
-			UNLOCK_DEVICE {
+			} #>
+			<# UNLOCK_DEVICE {
 				$restCall.Body = @(
 					@{
 						"type" = "UNLOCK_DEVICE"
 					}
 				) | ConvertTo-Json
-			}
-			UPDATE_DEVICE_OS {
+			} #>
+			<# UPDATE_DEVICE_OS {
 				$restCall.Body = @(
 					@{
 						"type" = "UPDATE_DEVICE_OS"
@@ -157,14 +157,14 @@ function Send-uemDeviceCommand {
 						}
 					}
 				) | ConvertTo-Json
-			}
-			WIPE_APPLICATIONS {
+			} #>
+			<# WIPE_APPLICATIONS {
 				$restCall.Body = @(
 					@{
 						"type" = "WIPE_APPLICATIONS"
 					}
 				) | ConvertTo-Json
-			}
+			} #>
 			Default {
 				Write-Output "No valid selection chosen.  Please run again with valid option."
 				break
