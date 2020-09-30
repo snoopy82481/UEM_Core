@@ -8,7 +8,7 @@ schema: 2.0.0
 # Disable-uemDeviceWorkSpace
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Disables access to BlackBerry workspace.
 
 ## SYNTAX
 
@@ -17,21 +17,19 @@ Disable-uemDeviceWorkSpace [-userGuid] <Guid> [-userDeviceGuid] <Guid> [<CommonP
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Disables access to BlackBerry workspace.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Disable-uemDeviceWorkSpace -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6 -userDeviceGuid 60d360cb-7e8d-49ba-a902-c8ce8678cde2
 ```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -userDeviceGuid
-{{ Fill userDeviceGuid Description }}
+Device GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid
@@ -46,7 +44,7 @@ Accept wildcard characters: False
 ```
 
 ### -userGuid
-{{ Fill userGuid Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid

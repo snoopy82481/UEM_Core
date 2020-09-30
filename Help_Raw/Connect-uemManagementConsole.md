@@ -8,7 +8,7 @@ schema: 2.0.0
 # Connect-uemManagementConsole
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Connects to UEM Management Console
 
 ## SYNTAX
 
@@ -17,21 +17,28 @@ Connect-uemManagementConsole [-tenant] <Uri> [-localAdmin] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Connects current session to UEM Management console with username and password.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Connect-uemManagementConsole -tenant https://servername:18084/S00000000
 ```
 
-{{ Add example description here }}
+Creates your connection to the UEM Console provided by the tenant.  As an Active Directory administrator.
+
+### Example 2
+```powershell
+PS C:\> Connect-uemManagementConsole -tenant https://servername:18084/S00000000 -localAdmin
+```
+
+Creates your connection to the UEM Console provided by the tenant.  As a locally created admin.
 
 ## PARAMETERS
 
 ### -localAdmin
-{{ Fill localAdmin Description }}
+Specified account is a local administrator account vs an Active Directory Linked administrator account.
 
 ```yaml
 Type: SwitchParameter
@@ -46,7 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -tenant
-{{ Fill tenant Description }}
+Server name for your connected UEM instance.
 
 ```yaml
 Type: Uri

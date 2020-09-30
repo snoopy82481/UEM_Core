@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-uemDeviceLogs
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Retrieve logs from the device and send the logs to a path defined by the UEM administrator.
 
 ## SYNTAX
 
@@ -17,21 +17,23 @@ Get-uemDeviceLogs [-userGuid] <Guid> [-userDeviceGuid] <Guid> [<CommonParameters
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Retrieve logs from the device and send the logs to a path defined by the UEM administrator. See [System Information](https://developer.blackberry.com/files/bws/reference/blackberry_uem_12_12_rest/resource_Info.html#resource_Info_getSystemInfo_GET) for the path to the log location.
+
+The log file name when the command is processed by the device will be of the form:
+
+{user name}_{device UDID}_YYYYMMdd-HHmmss.xyz
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-uemDeviceLogs -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6 -userDeviceGuid 60d360cb-7e8d-49ba-a902-c8ce8678cde2
 ```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -userDeviceGuid
-{{ Fill userDeviceGuid Description }}
+Device GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid
@@ -46,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -userGuid
-{{ Fill userGuid Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid

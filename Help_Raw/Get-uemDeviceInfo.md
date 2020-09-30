@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-uemDeviceInfo
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Request that the device update its information with the UEM server.
 
 ## SYNTAX
 
@@ -17,13 +17,13 @@ Get-uemDeviceInfo [-userGuid] <Guid> [-userDeviceGuid] <Guid> [<CommonParameters
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Request that the device update its information with the UEM server.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-uemDeviceInfo -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6 -userDeviceGuid 60d360cb-7e8d-49ba-a902-c8ce8678cde2
 ```
 
 {{ Add example description here }}
@@ -31,7 +31,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -userDeviceGuid
-{{ Fill userDeviceGuid Description }}
+Device GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -userGuid
-{{ Fill userGuid Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid

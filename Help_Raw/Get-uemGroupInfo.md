@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-uemGroupInfo
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Gets group information for a specified group.
 
 ## SYNTAX
 
@@ -17,21 +17,37 @@ Get-uemGroupInfo [-groupName] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Retrieves the groups name and GUID of the specified group. Returns a custom object that can be store in a variable.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-uemGroupInfo -groupName 'All users'
+
+guid                                 name
+----                                 ----
+c27d4c69-af03-4525-b064-e828f29b251a All Users
+
 ```
 
-{{ Add example description here }}
+Returns the guid and name of the group supplied.
+
+### Example 2
+```powershell
+PS C:\> $group = Get-uemGroupInfo -groupName 'All users'
+PS C:\> $group.guid
+c27d4c69-af03-4525-b064-e828f29b251a
+PS C:\> $group.name
+All Users
+```
+
+Returns the group info to variable to be called later.
 
 ## PARAMETERS
 
 ### -groupName
-{{ Fill groupName Description }}
+Name of the group that you want to get the information about.
 
 ```yaml
 Type: String
