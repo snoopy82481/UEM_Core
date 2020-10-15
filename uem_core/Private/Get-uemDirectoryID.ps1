@@ -8,13 +8,12 @@ function Get-uemDirectoryID {
 
 	begin {
 		$response = $null
+		$emailAddress = $userEmailAddress.Address
 
 		$restCall = @{
 			Headers = @{Authorization = $AuthorizationString}
 			Method = "GET"
-			Uri = "$UEMHostPortTenantGUIDBaseURL/directories/users?search=$userEmailAddress"
-			Body = $Null
-			ContentType = $Null
+			Uri = "$UEMHostPortTenantGUIDBaseURL/directories/users?search=$emailAddress"
 		}
 	}
 
@@ -25,7 +24,7 @@ function Get-uemDirectoryID {
 		}
 		catch
 		{
-			handleError $_
+			Set-errorReport $_
 			throw
 		}
 	}
