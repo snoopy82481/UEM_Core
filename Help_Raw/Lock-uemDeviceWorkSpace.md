@@ -8,7 +8,7 @@ schema: 2.0.0
 # Lock-uemDeviceWorkSpace
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Set work space password and locks work space.
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Lock-uemDeviceWorkSpace [-userGuid] <Guid> [-userDeviceGuid] <Guid> [-password] 
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Set work space password and locks work space.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Lock-uemDeviceWorkSpace -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6 -userDeviceGuid 60d360cb-7e8d-49ba-a902-c8ce8678cde2 -password 'password'
 ```
 
-{{ Add example description here }}
+Set work space password and locks work space.
 
 ## PARAMETERS
 
 ### -password
-{{ Fill password Description }}
+Password string to set the workspace password to.
 
 ```yaml
 Type: String
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -userDeviceGuid
-{{ Fill userDeviceGuid Description }}
+Device GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -userGuid
-{{ Fill userGuid Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid

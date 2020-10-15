@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-uemUserDevice
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Gets device(s) assigned to user.
 
 ## SYNTAX
 
@@ -17,21 +17,51 @@ Get-uemUserDevice [-userGUID] <Guid> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Gets device(s) assigned to user. It can output to the screen, but has a custom object that you can store as a variable to be used elsewhere.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-uemUserDevice -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6
+
+EnrollmentType      : MDM_CONTROLS
+guid                : 60d360cb-7e8d-49ba-a902-c8ce8678cde2
+activatinDate       : 10/1/2020 3:04:37 PM
+activeSyncID        : MDANJE3243533WRFDS32353
+batteryLevel        : 15
+Compromised         : False
+hadwareModel        : iPhone 8 Pus (GSM)
+hardwareName        : iPhone10,5
+homeCarrier         : AT&T
+networkRoaming      : False
+internalStorageFree : 51128
+internalStorageSize : 55732
+imei                : 25 950870 6874529 1
+meid                :
+osVersion           : 13.7
+ownership           : CORPORATE
+phoneNumber         :
+serialNumber        : K325DNEWA543
+udid                : 1afea56a18ag4ea125gg4agragf14781
+wifiMacAddress      : g8:45:a5:34:e3:3g
 ```
 
-{{ Add example description here }}
+Returns device information from UEM Console to the screen.
+
+### Example 1
+```powershell
+PS C:\> $device = Get-uemUserDevice -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6
+PS C:\> $device.hardwareModel
+iPhone 8 Plus (GSM)
+```
+
+Returns device information from UEM Console as a custom object.
 
 ## PARAMETERS
 
 ### -userGUID
-{{ Fill userGUID Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid

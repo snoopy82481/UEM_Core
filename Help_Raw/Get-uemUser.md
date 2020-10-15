@@ -39,7 +39,7 @@ admin        : False
 created      : 9/30/2020 9:24:56 PM
 ```
 
-Returns users information from UEM Console.
+Returns users information from UEM Console to the screen.
 
 ### Example 1
 ```powershell

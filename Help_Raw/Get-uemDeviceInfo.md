@@ -26,8 +26,6 @@ Request that the device update its information with the UEM server.
 PS C:\> Get-uemDeviceInfo -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6 -userDeviceGuid 60d360cb-7e8d-49ba-a902-c8ce8678cde2
 ```
 
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -userDeviceGuid

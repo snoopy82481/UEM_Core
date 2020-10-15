@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-uemUserGroups
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Gets users groups.
 
 ## SYNTAX
 
@@ -17,21 +17,34 @@ Get-uemUserGroups [-userGuid] <Guid> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Queries the users UEM account and gets the groups that the user is assigned to. Can display to screen or store as a variable as it creates an array of custom object.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-uemUserGroups -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6
+
+name      guid
+----      ----
+All Users c27d4c69-af03-4525-b064-e828f29b251a
 ```
 
-{{ Add example description here }}
+Lists users groups to the screen.
+
+### Example 2
+```powershell
+PS C:\> $groups = Get-uemUserGroups -userGuid cf2e85dd-1977-4c8a-9023-86eea5e233c6
+PS C:\> $groups.name
+All Users
+```
+
+Stores users groups to a variable that is an array of objects.
 
 ## PARAMETERS
 
 ### -userGuid
-{{ Fill userGuid Description }}
+Account GUID for user.  Should be sourced from the UEM Console.
 
 ```yaml
 Type: Guid
